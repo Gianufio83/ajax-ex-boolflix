@@ -25,7 +25,7 @@ $(document).ready(function () {
           $('.results').addClass('active');
 
           var films = data.results;
-          if (films == 0) {
+          if (films.length == 0) {
             alert('Non ci sono risultati');
           }
           else {
