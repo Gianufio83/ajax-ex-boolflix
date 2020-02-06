@@ -26,7 +26,7 @@ $(document).ready(function () {
 
           var films = data.results;
           if (films.length == 0) {
-            alert('Non ci sono risultati');
+            alert('Spiacente, non ci sono risultati.  Riprova');
           }
           else {
             printFilm(films);
