@@ -19,6 +19,9 @@
 .results.active {
   display: block;
 }
+.results {
+  padding: 10px;
+}
 .input {
 width: 200px;
 height: 30px;

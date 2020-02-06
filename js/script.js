@@ -10,7 +10,7 @@
 // Voto
 $(document).ready(function () {
   $('.btn').click(function () {
-    var query = 'Fight club';
+    var query = $('.input').val();
     $.ajax(
       {
         url : 'https://api.themoviedb.org/3/search/movie',
@@ -21,13 +21,19 @@ $(document).ready(function () {
           language : 'it-IT'
         },
         success : function (data) {
-          var films = data.results;
           $('.results').removeClass('active');
           $('.results').addClass('active');
-          printFilm(films); // è un array che contiene oggetti/film
+
+          var films = data.results;
+          if (films == 0) {
+            alert('Non ci sono risultati');
+          }
+          else {
+            printFilm(films);
+          };
 
         },
-        error: function (request, staoriginal_languagete, errors) {
+        error: function (request, state, errors) {
           console.log('Errore' + errors);
         }
       }
@@ -35,6 +41,7 @@ $(document).ready(function () {
   });
 
   function printFilm(films) {
+    $('.cover-films').html('');
     var source = $('#film-template').html();
     var template = Handlebars.compile(source);
     for (var i = 0; i < films.length; i++) {
@@ -47,7 +54,6 @@ $(document).ready(function () {
        }
        var html = template(context);
        $('.cover-films').append(html);
-
     }
   }
 });
