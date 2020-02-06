@@ -9,5 +9,42 @@
 // Lingua
 // Voto
 $(document).ready(function () {
-  
+  $('.btn').click(function () {
+    var query = 'Fight club';
+    $.ajax(
+      {
+        url : 'https://api.themoviedb.org/3/search/movie',
+        method: 'GET',
+        data : {
+          api_key: '9870f35e71374469c3af0707aac57353',
+          query: query,
+          language : 'it-IT'
+        },
+        success : function (data) {
+          var films = data.results;
+          printFilm(films); // è un array che contiene oggetti/film
+
+        },
+        error: function (request, staoriginal_languagete, errors) {
+          console.log('Errore' + errors);
+        }
+      }
+      );
+  });
+
+  function printFilm(films) {
+    var source = $('#film-template').html();
+    var template = Handlebars.compile(source);
+    for (var i = 0; i < films.length; i++) {
+       var film = films[i];
+       var context = {
+         title : film.title,
+         original_title : film.original_title,
+         original_language : film.original_language,
+         vote_average : film.vote_average
+       }
+       var html = template(context);
+       $('.cover-films').append(html);
+    }
+  }
 });

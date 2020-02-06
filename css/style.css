@@ -6,6 +6,12 @@
 .container {
   margin: 30px 30px;
 }
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  /* border : 1px solid black; */
+
+}
 
 .input {
 width: 200px;

@@ -14,12 +14,15 @@
     <input class="input"type="text" name="" value=""placeholder="Scrivi il titolo del film ">
     <button class="btn"type="button" name="button">Cerca</button>
   </div>
-  <ul class="cover-films">
+  <div class="wrapper">
+    <ul class="cover-films">
 
-  </ul>
+    </ul>
+  </div>
+
 
   <script id="film-template" type="text/x-handlebars-template">
-    <li></li>
+    <li>{{title}} - {{original_title}} - {{original_language}} - {{vote_average}}</li>
   </script>
 
   <script src="js/script.js" charset="utf-8"></script>
