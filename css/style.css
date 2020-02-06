@@ -6,13 +6,19 @@
 .container {
   margin: 30px 30px;
 }
+.results {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+
+}
 .wrapper {
   width: 80%;
   margin: 0 auto;
-  /* border : 1px solid black; */
-
 }
-
+.results.active {
+  display: block;
+}
 .input {
 width: 200px;
 height: 30px;
@@ -25,5 +31,14 @@ box-shadow: 5px 10px #888888:
 width: 80px;
 height: 30px;
 background-color: orange;
-
 }
+/* .results {
+  display:none;
+} */
+.cover-films li {
+  /* list-style: none; */
+  text-decoration: underline;
+}
+/* .result.acrive {
+  display:block;
+} */

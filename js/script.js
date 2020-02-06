@@ -22,6 +22,8 @@ $(document).ready(function () {
         },
         success : function (data) {
           var films = data.results;
+          $('.results').removeClass('active');
+          $('.results').addClass('active');
           printFilm(films); // è un array che contiene oggetti/film
 
         },
@@ -45,6 +47,7 @@ $(document).ready(function () {
        }
        var html = template(context);
        $('.cover-films').append(html);
+
     }
   }
 });
