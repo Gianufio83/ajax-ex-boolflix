@@ -59,21 +59,33 @@ $(document).ready(function () {
     for (var i = 0; i < films.length; i++) {
        var film = films[i];
        var voto = film.vote_average;
-       voto = getRandomIntInclusive(1, 5);
+
+
+
        var context = {
          title : film.title,
          original_title : film.original_title,
          original_language : film.original_language,
-         vote_average : voto
+         vote_average : printStars(voto),
+         // star : '<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
        }
        var html = template(context);
        $('.cover-films').append(html);
     }
   }
-  function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+    function printStars(vote) {
+      var vote = Math.round(vote / 2);
+      var stars = '';
+      for (var i = 1; i <= 5 ; i++) {
+        if (i <= vote) {
+          var simpleStar = '<i class="fas fa-star"></i>';
+        } else {
+          var simpleStar = '<i class="far fa-star"></i>';
+        }
+        stars += simpleStar;
+      }
+      return stars
+    }
   
+
 });

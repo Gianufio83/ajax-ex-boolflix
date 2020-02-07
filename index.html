@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,14 +29,17 @@
   <script id="film-template" type="text/x-handlebars-template">
   <li>
     <span class="title">{{title}}</span>
-
     <ul>
       <li>Titolo originale:
         {{original_title}}</li>
       <li>Linguaggio originale:
         {{original_language}}</li>
       <li>Voto:
-        {{vote_average}}</li>
+         {{{vote_average}}}
+      </li>
+      <!-- <li>
+        Recensione: {{{star}}}
+      </li> -->
     </ul>
   </li>
   </script>
