@@ -11,13 +11,20 @@
 $(document).ready(function () {
   $('.btn').click(function () {
     var query = $('.input').val();
-    $.ajax(
+    resetSearch();
+    getMovies(query);
+
+  });
+  function getMovies(string) {
+      var url = 'https://api.themoviedb.org/3/search/movie';
+      var api = '9870f35e71374469c3af0707aac57353'
+      $.ajax(
       {
-        url : 'https://api.themoviedb.org/3/search/movie',
+        url : url,
         method: 'GET',
         data : {
-          api_key: '9870f35e71374469c3af0707aac57353',
-          query: query,
+          api_key: api,
+          query: string,
           language : 'it-IT'
         },
         success : function (data) {
@@ -25,11 +32,11 @@ $(document).ready(function () {
           $('.results').addClass('active');
 
           var films = data.results;
-          if (films.length == 0) {
-            alert('Spiacente, non ci sono risultati.  Riprova');
+          if (data.total_results > 0) {
+          printFilm(films);
           }
           else {
-            printFilm(films);
+          alert('Spiacente, non ci sono risultati.  Riprova');
           };
 
         },
@@ -38,10 +45,15 @@ $(document).ready(function () {
         }
       }
       );
-  });
+  }
+  function resetSearch() {
+    $('.cover-films').html('');
+    $('.input').val('');
+  }
+
 
   function printFilm(films) {
-    $('.cover-films').html('');
+
     var source = $('#film-template').html();
     var template = Handlebars.compile(source);
     for (var i = 0; i < films.length; i++) {

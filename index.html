@@ -24,9 +24,23 @@
   </div>
 
 
+
   <script id="film-template" type="text/x-handlebars-template">
-    <li>{{title}} - {{original_title}} - {{original_language}} - {{vote_average}}</li>
+  <li>
+    <span class="title">{{title}}</span>
+
+    <ul>
+      <li>Titolo originale:
+        {{original_title}}</li>
+      <li>Linguaggio originale:
+        {{original_language}}</li>
+      <li>Voto:
+        {{vote_average}}</li>
+    </ul>
+  </li>
   </script>
+
+
 
   <script src="js/script.js" charset="utf-8"></script>
 </body>
