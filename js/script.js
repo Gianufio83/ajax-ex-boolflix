@@ -58,14 +58,22 @@ $(document).ready(function () {
     var template = Handlebars.compile(source);
     for (var i = 0; i < films.length; i++) {
        var film = films[i];
+       var voto = film.vote_average;
+       voto = getRandomIntInclusive(1, 5);
        var context = {
          title : film.title,
          original_title : film.original_title,
          original_language : film.original_language,
-         vote_average : film.vote_average
+         vote_average : voto
        }
        var html = template(context);
        $('.cover-films').append(html);
     }
   }
+  function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
 });
