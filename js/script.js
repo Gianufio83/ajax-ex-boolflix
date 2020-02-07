@@ -38,7 +38,8 @@ $(document).ready(function () {
           printFilm(films);
           }
           else {
-          alert('Spiacente, non ci sono risultati.  Riprova');
+          // alert('Spiacente, non ci sono risultati.  Riprova');
+          messageNotFound();
           };
 
         },
@@ -65,7 +66,9 @@ $(document).ready(function () {
           printSerieTv(films);
           }
           else {
-          alert('Spiacente, non ci sono risultati.  Riprova');
+          // alert('Spiacente, non ci sono risultati.  Riprova');
+          messageNotFound();
+
           };
 
         },
@@ -130,7 +133,12 @@ $(document).ready(function () {
       }
       return stars
     }
-
+    function messageNotFound() {
+      var source = $('#noresults-template').html();
+      var template = Handlebars.compile(source);
+      var html = template();
+      $('.cover-films').append(html);
+    }
 
 
 });
