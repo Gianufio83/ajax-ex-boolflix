@@ -17,7 +17,9 @@ $(document).ready(function () {
   });
   function getMovies(string) {
       var url = 'https://api.themoviedb.org/3/search/movie';
-      var api = '9870f35e71374469c3af0707aac57353'
+      var api = '9870f35e71374469c3af0707aac57353';
+      var urlSerie = 'https://api.themoviedb.org/3/search/tv';
+
       $.ajax(
       {
         url : url,
@@ -34,6 +36,33 @@ $(document).ready(function () {
           var films = data.results;
           if (data.total_results > 0) {
           printFilm(films);
+          }
+          else {
+          alert('Spiacente, non ci sono risultati.  Riprova');
+          };
+
+        },
+        error: function (request, state, errors) {
+          console.log('Errore' + errors);
+        }
+      }
+      );
+      $.ajax(
+      {
+        url : urlSerie,
+        method: 'GET',
+        data : {
+          api_key: api,
+          query: string,
+          language : 'it-IT'
+        },
+        success : function (data) {
+          $('.results').removeClass('active');
+          $('.results').addClass('active');
+
+          var films = data.results;
+          if (data.total_results > 0) {
+          printSerieTv(films);
           }
           else {
           alert('Spiacente, non ci sono risultati.  Riprova');
@@ -63,6 +92,24 @@ $(document).ready(function () {
        var context = {
          title : film.title,
          original_title : film.original_title,
+         original_language : 'img/' + flag + '.png',
+         vote_average : printStars(voto),
+       }
+       var html = template(context);
+       $('.cover-films').append(html);
+    }
+  }
+  function printSerieTv(serie) {
+
+    var source = $('#serie-template').html();
+    var template = Handlebars.compile(source);
+    for (var i = 0; i < serie.length; i++) {
+       var serie = serie[i];
+       var voto = serie.vote_average;
+       var flag = serie.original_language;
+       var context = {
+         name : serie.name,
+         original_name : serie.original_name,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
        }
