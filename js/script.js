@@ -59,15 +59,12 @@ $(document).ready(function () {
     for (var i = 0; i < films.length; i++) {
        var film = films[i];
        var voto = film.vote_average;
-
-
-
+       var flag = film.original_language;
        var context = {
          title : film.title,
          original_title : film.original_title,
-         original_language : film.original_language,
+         original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
-         // star : '<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
        }
        var html = template(context);
        $('.cover-films').append(html);
@@ -86,6 +83,7 @@ $(document).ready(function () {
       }
       return stars
     }
-  
+
+
 
 });
