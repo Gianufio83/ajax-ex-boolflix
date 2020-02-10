@@ -35,39 +35,47 @@
 
   <script id="film-template" type="text/x-handlebars-template">
   <li>
-    <div class="img_container">
-      <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
-    </div>
-    <div class="info display_none">
-      <span class="title">{{title}}</span>
-      <ul>
-        <li>Titolo originale:
-          {{original_title}}</li>
-        <li>Linguaggio originale:
-          <img class="flag" src="{{original_language}}" alt=""></li>
-        <li>Voto:
-           {{{vote_average}}}
-        </li>
-      </ul>
+    <div class="postcards">
+      <div class="img_container">
+        <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
+      </div>
+      <div class="info">
+        <div class="info active">
+          <span class="title">{{title}}</span>
+          <ul>
+            <li>Titolo originale:
+              {{original_title}}</li>
+            <li>Linguaggio originale:
+              <img class="flag" src="{{original_language}}" alt=""></li>
+            <li>Voto:
+               {{{vote_average}}}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </li>
   </script>
   <script id="serie-template" type="text/x-handlebars-template">
   <li>
-    <div class="img_container">
-      <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
-    </div>
-    <div class="info display_none">
-      <span class="title">{{name}}</span>
-      <ul>
-        <li>Titolo originale della SerieTv:
-          {{original_name}}</li>
-        <li>Linguaggio originale:
-          <img class="flag" src="{{original_language}}" alt=""></li>
-        <li>Voto:
-           {{{vote_average}}}
-        </li>
-      </ul>
+    <div class="postcards">
+      <div class="img_container">
+        <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
+      </div>
+      <div class="info">
+        <div class="info active">
+          <span class="title">{{name}}</span>
+          <ul>
+            <li>Titolo originale della SerieTv:
+              {{original_name}}</li>
+            <li>Linguaggio originale:
+              <img class="flag" src="{{original_language}}" alt=""></li>
+            <li>Voto:
+               {{{vote_average}}}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </li>
   </script>

@@ -12,11 +12,7 @@
   margin: 0 auto;
 
 }
-.wrapper {
-  width: 80%;
-  margin: 0 auto;
-  /* background-color: yellow; */
-}
+
 .results.active {
   display: block;
 }
@@ -39,7 +35,15 @@ background-color: orange;
 
 ul {
   list-style: none;
-  /* text-decoration: underline; */
+}
+.wrapper {
+  width: 300px;
+
+}
+.cover-films,
+.cover-serie {
+  display: flex;
+  flex wrap : wrap;
 }
 
 .title {
@@ -54,8 +58,14 @@ ul {
 }
 
 .flag {
-  width: 50px;
+  width: 30px;
 }
-.display_none  {
+/* .info  {
   display:none ;
+} */
+.info.active {
+  display:block;
 }
+/* .postcards {
+  display: flex;
+} */

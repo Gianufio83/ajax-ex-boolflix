@@ -15,6 +15,10 @@ $(document).ready(function () {
     getMovies(query);
 
   });
+  // $('.img_container').mouseenter(function () {
+  //
+  //
+  // });
   function getMovies(string) {
       var url = 'https://api.themoviedb.org/3/search/movie';
       var api = '9870f35e71374469c3af0707aac57353';
@@ -32,13 +36,14 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
+          // $('.info').removeClass('active');
+          // $('.info').addClass('active');
 
           var films = data.results;
           if (data.total_results > 0) {
           printFilm(films);
           }
           else {
-          // alert('Spiacente, non ci sono risultati.  Riprova');
           messageNotFound();
           };
 
@@ -60,13 +65,14 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
+          // $('.info').removeClass('active');
+          // $('.info').addClass('active');
 
           var films = data.results;
           if (data.total_results > 0) {
           printSerieTv(films);
           }
           else {
-          // alert('Spiacente, non ci sono risultati.  Riprova');
           messageNotFound();
 
           };
@@ -82,8 +88,7 @@ $(document).ready(function () {
     $('.cover-films').html('');
     $('.cover-serie').html('');
     $('.input').val('');
-  }
-
+  };
 
   function printFilm(films) {
 
@@ -93,17 +98,19 @@ $(document).ready(function () {
        var film = films[i];
        var voto = film.vote_average;
        var flag = film.original_language;
+       var image = film.poster_path;
        var context = {
          title : film.title,
          original_title : film.original_title,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
-         poster_path : film.poster_path
+         poster_path : image
        }
        var html = template(context);
        $('.cover-films').append(html);
     }
-  }
+  };
+
   function printSerieTv(serie) {
 
     var source = $('#serie-template').html();
@@ -112,17 +119,19 @@ $(document).ready(function () {
        var serie = serie[i];
        var voto = serie.vote_average;
        var flag = serie.original_language;
+       var image = serie.poster_path;
        var context = {
          name : serie.name,
          original_name : serie.original_name,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
-         poster_path : serie.poster_path
+         poster_path : image
        }
        var html = template(context);
        $('.cover-serie').append(html);
     }
-  }
+  };
+
     function printStars(vote) {
       var vote = Math.round(vote / 2);
       var stars = '';
@@ -135,13 +144,27 @@ $(document).ready(function () {
         stars += simpleStar;
       }
       return stars
-    }
+    };
+
     function messageNotFound() {
       var source = $('#noresults-template').html();
       var template = Handlebars.compile(source);
       var html = template();
       $('.cover-films').append(html);
-    }
+    };
+
+  //   function printImage(string) {
+  //     var availableLangs = [
+  //   'en',
+  //   'it'
+  //   ];
+  //
+  //   if(availableLangs.includes(string)) {
+  //     string = '<img class="lang" src="img/' + string + '.svg" alt="en">';
+  //   }
+  //
+  //   return string;
+  // }
 
 
 });
