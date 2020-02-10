@@ -99,17 +99,13 @@ $(document).ready(function () {
        var voto = film.vote_average;
        var flag = film.original_language;
        var image = film.poster_path;
-       if (image == '') {
-          image = 'img/poster-default.png';
-       } else {
-          image = film.poster_path;
-       }
+      
        var context = {
          title : film.title,
          original_title : film.original_title,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
-         poster_path : image
+         poster_path :  printImage(image)
        }
        var html = template(context);
        $('.cover-films').append(html);
@@ -125,17 +121,13 @@ $(document).ready(function () {
        var voto = serie.vote_average;
        var flag = serie.original_language;
        var image = serie.poster_path;
-       if (image == '') {
-         image = 'img/poster-default.png';
-       } else {
-        image = serie.poster_path;
-       }
+
        var context = {
          name : serie.name,
          original_name : serie.original_name,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
-         poster_path : image
+         poster_path : printImage(image)
        }
        var html = template(context);
        $('.cover-serie').append(html);
@@ -163,18 +155,17 @@ $(document).ready(function () {
       $('.cover-films').append(html);
     };
 
-  //   function printImage(string) {
-  //     var availableLangs = [
-  //   'en',
-  //   'it'
-  //   ];
-  //
-  //   if(availableLangs.includes(string)) {
-  //     string = '<img class="lang" src="img/' + string + '.svg" alt="en">';
-  //   }
-  //
-  //   return string;
-  // }
+    function printImage(poster) {
+      var url = 'https://image.tmdb.org/t/p/w185';
+
+      if (poster != null) {
+         url += poster;
+      } else {
+         url = 'img/poster-default.png'
+      }
+
+      return url;
+  }
 
 
 });
