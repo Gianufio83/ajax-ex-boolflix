@@ -15,10 +15,7 @@ $(document).ready(function () {
     getMovies(query);
 
   });
-  // $('.img_container').mouseenter(function () {
-  //
-  //
-  // });
+
   function getMovies(string) {
       var url = 'https://api.themoviedb.org/3/search/movie';
       var api = '9870f35e71374469c3af0707aac57353';
@@ -36,8 +33,6 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
-          // $('.info').removeClass('active');
-          // $('.info').addClass('active');
 
           var films = data.results;
           if (data.total_results > 0) {
@@ -65,16 +60,14 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
-          // $('.info').removeClass('active');
-          // $('.info').addClass('active');
 
-          var films = data.results;
+
+          var serie = data.results;
           if (data.total_results > 0) {
-          printSerieTv(films);
+          printSerieTv(serie);
           }
           else {
           messageNotFound();
-
           };
 
         },
