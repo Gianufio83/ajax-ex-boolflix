@@ -3,8 +3,21 @@
   padding:0;
   box-sizing: border-box;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  background-color: black;
+  line-height: 100px;
+}
 .container {
-  margin: 30px 30px;
+  /* margin: 30px 30px; */
+}
+.logo_title {
+  color: red;
+  font-weight: bold;
 }
 .results {
   display: none;
@@ -36,6 +49,9 @@ background-color: orange;
 ul {
   list-style: none;
 }
+h2 {
+  padding: 20px;
+}
 .wrapper {
   width:100%;
   /* background-color: grey; */
@@ -44,6 +60,7 @@ ul {
 .cover-films,
 .cover-serie {
   display: flex;
+  justify-content: space-between;
   flex-wrap : wrap;
 }
 
@@ -69,8 +86,9 @@ ul {
 }
 .img_container {
   width: 185px;
-  height: 100%;
+  height: 300px;
 }
-/* .postcards {
-  display: flex;
-} */
+.postcards {
+  padding: 20px
+  border: 1px solid black;
+}

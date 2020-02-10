@@ -11,10 +11,16 @@
   <title>Booflix</title>
 </head>
 <body>
-  <div class="container">
-    <input class="input"type="text" name="" value=""placeholder="Scrivi il titolo del film ">
-    <button class="btn"type="button" name="button">Cerca</button>
+  <div class="header">
+    <div class="logo">
+      <h1 class="logo_title">BOOFLIX</h1>
+    </div>
+    <div class="container">
+      <input class="input"type="text" name="" value=""placeholder="Scrivi il titolo del film ">
+      <button class="btn"type="button" name="button">Cerca</button>
+    </div>
   </div>
+
   <div class="results">
     <h3 class="results active ">Risultati trovati : </h3>
   </div>
@@ -46,7 +52,7 @@
             <li>Titolo originale:
               {{original_title}}</li>
             <li>Linguaggio originale:
-              <img class="flag" src="{{original_language}}" alt=""></li>
+              {{{original_language}}}</li>
             <li>Voto:
                {{{vote_average}}}
             </li>
@@ -69,7 +75,7 @@
             <li>Titolo originale della SerieTv:
               {{original_name}}</li>
             <li>Linguaggio originale:
-              <img class="flag" src="{{original_language}}" alt=""></li>
+              {{{original_language}}}</li>
             <li>Voto:
                {{{vote_average}}}
             </li>
