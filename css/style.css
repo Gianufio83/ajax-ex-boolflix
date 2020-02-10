@@ -37,13 +37,13 @@ ul {
   list-style: none;
 }
 .wrapper {
-  width: 300px;
+  width:100%;
 
 }
 .cover-films,
 .cover-serie {
   display: flex;
-  flex wrap : wrap;
+  flex-wrap : wrap;
 }
 
 .title {
@@ -65,6 +65,10 @@ ul {
 } */
 .info.active {
   display:block;
+}
+.img_container {
+  width: 185px;
+  height: 100%;
 }
 /* .postcards {
   display: flex;

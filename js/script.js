@@ -99,6 +99,11 @@ $(document).ready(function () {
        var voto = film.vote_average;
        var flag = film.original_language;
        var image = film.poster_path;
+       if (image == '') {
+          image = 'img/poster-default.png';
+       } else {
+          image = film.poster_path;
+       }
        var context = {
          title : film.title,
          original_title : film.original_title,
@@ -120,6 +125,11 @@ $(document).ready(function () {
        var voto = serie.vote_average;
        var flag = serie.original_language;
        var image = serie.poster_path;
+       if (image == '') {
+         image = 'img/poster-default.png';
+       } else {
+        image = serie.poster_path;
+       }
        var context = {
          name : serie.name,
          original_name : serie.original_name,
