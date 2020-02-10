@@ -37,10 +37,11 @@ height: 30px;
 background-color: orange;
 }
 
-.cover-films li {
-  /* list-style: none; */
-  text-decoration: underline;
+ul {
+  list-style: none;
+  /* text-decoration: underline; */
 }
+
 .title {
   font-size: 20px;
   font-weight: bold;
@@ -50,4 +51,11 @@ background-color: orange;
 }
 .yellow {
   color: yellow;
+}
+
+.flag {
+  width: 50px;
+}
+.display_none  {
+  display:none ;
 }

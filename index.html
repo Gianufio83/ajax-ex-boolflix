@@ -19,7 +19,14 @@
     <h3 class="results active ">Risultati trovati : </h3>
   </div>
   <div class="wrapper">
+    <h2>Film</h2>
     <ul class="cover-films">
+
+
+    </ul>
+    <h2>Serie TV</h2>
+    <ul class="cover-serie">
+
 
     </ul>
   </div>
@@ -28,32 +35,40 @@
 
   <script id="film-template" type="text/x-handlebars-template">
   <li>
-    <span class="title">{{title}}</span>
-    <ul>
-      <li>Titolo originale:
-        {{original_title}}</li>
-      <li>Linguaggio originale:
-        <img src="{{original_language}}" alt=""></li>
-      <li>Voto:
-         {{{vote_average}}}
-      </li>
-
-    </ul>
+    <div class="img_container">
+      <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
+    </div>
+    <div class="info display_none">
+      <span class="title">{{title}}</span>
+      <ul>
+        <li>Titolo originale:
+          {{original_title}}</li>
+        <li>Linguaggio originale:
+          <img class="flag" src="{{original_language}}" alt=""></li>
+        <li>Voto:
+           {{{vote_average}}}
+        </li>
+      </ul>
+    </div>
   </li>
   </script>
   <script id="serie-template" type="text/x-handlebars-template">
   <li>
-    <span class="title">{{name}}</span>
-    <ul>
-      <li>Titolo originale della serie:
-        {{original_name}}</li>
-      <li>Linguaggio originale:
-        <img src="{{original_language}}" alt=""></li>
-      <li>Voto:
-         {{{vote_average}}}
-      </li>
-
-    </ul>
+    <div class="img_container">
+      <img src="https://image.tmdb.org/t/p/w185{{poster_path}}" alt="">
+    </div>
+    <div class="info display_none">
+      <span class="title">{{name}}</span>
+      <ul>
+        <li>Titolo originale della SerieTv:
+          {{original_name}}</li>
+        <li>Linguaggio originale:
+          <img class="flag" src="{{original_language}}" alt=""></li>
+        <li>Voto:
+           {{{vote_average}}}
+        </li>
+      </ul>
+    </div>
   </li>
   </script>
   <script id="noresults-template" type="text/x-handlebars-template">

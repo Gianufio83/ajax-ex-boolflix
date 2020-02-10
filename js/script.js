@@ -80,6 +80,7 @@ $(document).ready(function () {
   }
   function resetSearch() {
     $('.cover-films').html('');
+    $('.cover-serie').html('');
     $('.input').val('');
   }
 
@@ -97,6 +98,7 @@ $(document).ready(function () {
          original_title : film.original_title,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
+         poster_path : film.poster_path
        }
        var html = template(context);
        $('.cover-films').append(html);
@@ -115,9 +117,10 @@ $(document).ready(function () {
          original_name : serie.original_name,
          original_language : 'img/' + flag + '.png',
          vote_average : printStars(voto),
+         poster_path : serie.poster_path
        }
        var html = template(context);
-       $('.cover-films').append(html);
+       $('.cover-serie').append(html);
     }
   }
     function printStars(vote) {
