@@ -20,21 +20,27 @@
       <button class="btn"type="button" name="button">Cerca</button>
     </div>
   </div>
-
-  <div class="results">
-    <h3 class="results active ">Risultati trovati : </h3>
-  </div>
-  <div class="wrapper">
-    <h2>Film</h2>
-    <ul class="cover-films">
-
-
-    </ul>
-    <h2>Serie TV</h2>
-    <ul class="cover-serie">
+  <div class="main_wrapper">
+    <div class="results">
+      <h3 class="results active ">RISULTATI TROVATI : </h3>
+    </div>
+    <div class="wrapper">
+      <div class="genre">
+        <h2 class="genre active">Film</h2>
+      </div>
+      <ul class="cover-films">
 
 
-    </ul>
+      </ul>
+      <div class="genre">
+        <h2 class="genre active">Serie TV</h2>
+      </div>
+      <ul class="cover-serie">
+
+
+      </ul>
+    </div>
+
   </div>
 
 
@@ -42,22 +48,20 @@
   <script id="film-template" type="text/x-handlebars-template">
   <li>
     <div class="postcards">
-      <div class="img_container">
-        <img src="{{poster_path}}" alt="">
-      </div>
-      <div class="info">
-        <div class="info active">
-          <span class="title">{{title}}</span>
+      <img class="poster" src="{{poster_path}}" alt="">
+    <div class="info">
+        <span class="title">{{title}}</span>
           <ul>
-            <li>Titolo originale:
-              {{original_title}}</li>
-            <li>Linguaggio originale:
-              {{{original_language}}}</li>
-            <li>Voto:
+            <li class="original">Titolo originale:
+              {{original_title}}
+            </li>
+            <li class="original">Linguaggio originale:
+              {{{original_language}}}
+            </li>
+            <li class="original">Voto:
                {{{vote_average}}}
             </li>
           </ul>
-        </div>
       </div>
     </div>
   </li>
@@ -65,22 +69,20 @@
   <script id="serie-template" type="text/x-handlebars-template">
   <li>
     <div class="postcards">
-      <div class="img_container">
-        <img src="{{poster_path}}" alt="">
-      </div>
-      <div class="info">
-        <div class="info active">
-          <span class="title">{{name}}</span>
-          <ul>
-            <li>Titolo originale della SerieTv:
-              {{original_name}}</li>
-            <li>Linguaggio originale:
-              {{{original_language}}}</li>
-            <li>Voto:
+      <img class="poster" src="{{poster_path}}" alt="">
+    <div class="info">
+      <span class="title">{{name}}</span>
+        <ul>
+          <li class="original">Titolo originale della SerieTv:
+              {{original_name}}
+          </li>
+          <li class="original">Linguaggio originale:
+              {{{original_language}}}
+            </li>
+          <li class="original" >Voto:
                {{{vote_average}}}
             </li>
           </ul>
-        </div>
       </div>
     </div>
   </li>

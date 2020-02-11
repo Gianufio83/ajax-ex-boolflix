@@ -18,11 +18,15 @@ $(document).ready(function () {
       research();
     }
   });
+
+// Functions
+
   function research() {
     var query = $('.input').val();
     resetSearch();
     getMovies(query);
-  }
+  };
+
   function getMovies(string) {
       var url = 'https://api.themoviedb.org/3/search/movie';
       var api = '9870f35e71374469c3af0707aac57353';
@@ -40,6 +44,8 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
+          $('.genre').removeClass('active');
+          $('.genre').addClass('active');
 
           var films = data.results;
           if (data.total_results > 0) {
@@ -67,7 +73,8 @@ $(document).ready(function () {
         success : function (data) {
           $('.results').removeClass('active');
           $('.results').addClass('active');
-
+          $('.genre').removeClass('active');
+          $('.genre').addClass('active');
 
           var serie = data.results;
           if (data.total_results > 0) {
@@ -139,9 +146,9 @@ $(document).ready(function () {
       var stars = '';
       for (var i = 1; i <= 5 ; i++) {
         if (i <= vote) {
-          var simpleStar = '<i class="fas fa-star"></i>';
+          var simpleStar = '<i class="fas fa-star stars"></i>';
         } else {
-          var simpleStar = '<i class="far fa-star"></i>';
+          var simpleStar = '<i class="far fa-star stars"></i>';
         }
         stars += simpleStar;
       }
