@@ -112,7 +112,8 @@ $(document).ready(function () {
          original_title : film.original_title,
          original_language : printFlag(flag),
          vote_average : printStars(voto),
-         poster_path :  printImage(image)
+         poster_path :  printImage(image),
+         overview : film.overview
        }
        var html = template(context);
        $('.cover-films').append(html);
@@ -134,7 +135,8 @@ $(document).ready(function () {
          original_name : serie.original_name,
          original_language : printFlag(flag),
          vote_average : printStars(voto),
-         poster_path : printImage(image)
+         poster_path : printImage(image),
+         overview : serie.overview
        }
        var html = template(context);
        $('.cover-serie').append(html);
@@ -171,7 +173,9 @@ $(document).ready(function () {
     'es',
     'fr',
     'ru',
-    'zh'
+    'zh',
+    'pl',
+    'cs'
   ];
 
   if(flags.includes(string)) {
@@ -179,9 +183,9 @@ $(document).ready(function () {
   }
 
   return string;
-    }
+  };
 
-    function printImage(poster) {
+  function printImage(poster) {
       var url = 'https://image.tmdb.org/t/p/w185';
       if (poster != null) {
          url += poster;
@@ -189,7 +193,6 @@ $(document).ready(function () {
          url = 'img/poster-default.png'
       }
       return url;
-  }
-
+  };
 
 });
