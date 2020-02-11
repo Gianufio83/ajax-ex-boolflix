@@ -160,6 +160,7 @@ $(document).ready(function () {
       var template = Handlebars.compile(source);
       var html = template();
       $('.cover-films').append(html);
+      $('.cover-serie').append(html);
     };
 
     function printFlag(string) {

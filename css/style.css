@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: grey;
+  background-color: rgb(30, 32, 30);
 }
 ul {
   list-style: none;
@@ -55,8 +55,8 @@ margin-top: 100px;
 
 .results.active {
   display: block;
-  background-color: grey;
-  color: black;
+  background-color: rgb(30, 32, 30);
+  color: red;
   font-weight: bold;
   border: 1px solid black:
 
@@ -80,7 +80,7 @@ border-radius: 50px;
 .wrapper {
   width:100%;
   height: calc(100% - 100px);
-  background-color: grey;
+  background-color: rgb(30, 32, 30);
 }
 
 .genre {
@@ -89,6 +89,7 @@ border-radius: 50px;
 
 .genre.active {
   display:block;
+  color:red;
 }
 
 .cover-films,
@@ -115,10 +116,7 @@ border-radius: 50px;
   width: 30px;
 }
 
-/* .info.active {
-  display:block;
 
-} */
 .img_container {
   width: 185px;
   height: 278px;
@@ -132,7 +130,8 @@ border-radius: 50px;
   height: 400px;
   padding: 10px;
   border: 3px solid black;
-  min-width: 278px;
+  box-shadow: 10px 5px 5px #333333;
+  min-width: 300px;
   position: relative;
   margin: 10px;
 }
