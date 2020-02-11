@@ -10,12 +10,19 @@
 // Voto
 $(document).ready(function () {
   $('.btn').click(function () {
+   research();
+
+  });
+  $('.input').keypress(function (event) {
+    if(event.which == 13) {
+      research();
+    }
+  });
+  function research() {
     var query = $('.input').val();
     resetSearch();
     getMovies(query);
-
-  });
-
+  }
   function getMovies(string) {
       var url = 'https://api.themoviedb.org/3/search/movie';
       var api = '9870f35e71374469c3af0707aac57353';

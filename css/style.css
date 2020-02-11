@@ -43,7 +43,8 @@ box-shadow: 5px 10px #888888:
 .btn {
 width: 80px;
 height: 30px;
-background-color: orange;
+background-color: grey;
+border-radius: 50px;
 }
 
 ul {
