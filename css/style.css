@@ -5,6 +5,7 @@
 }
 body {
   background-color: rgb(12, 12, 13);
+  font-family: 'Libre Baskerville', serif;
 }
 ul {
   list-style: none;
@@ -21,7 +22,13 @@ h2 {
 }
 
 .original {
-  color: white ;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+}
+.original-overview {
+  font-size: 10px;
+  color:white;
 }
 .header {
   display: flex;
@@ -47,9 +54,10 @@ margin-top: 100px;
 }
 .results {
   display: none;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
+
 
 }
 
@@ -58,8 +66,8 @@ margin-top: 100px;
   background-color: rgb(12, 12, 13);
   color: red;
   font-weight: bold;
-  border: 1px solid black:
-
+  margin: 5px;
+  text-align: center;
 }
 
 .input {

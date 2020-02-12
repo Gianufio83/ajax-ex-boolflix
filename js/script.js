@@ -138,34 +138,37 @@ $(document).ready(function () {
          poster_path : printImage(image),
          overview : serie.overview
        }
+
        var html = template(context);
        $('.cover-serie').append(html);
     }
   };
 
-    function printStars(vote) {
-      var vote = Math.round(vote / 2);
-      var stars = '';
-      for (var i = 1; i <= 5 ; i++) {
-        if (i <= vote) {
-          var simpleStar = '<i class="fas fa-star stars"></i>';
+  function printStars(vote) {
+    var vote = Math.round(vote / 2);
+    var stars = '';
+    for (var i = 1; i <= 5 ; i++) {
+      if (i <= vote) {
+        var simpleStar = '<i class="fas fa-star stars"></i>';
         } else {
-          var simpleStar = '<i class="far fa-star stars"></i>';
+        var simpleStar = '<i class="far fa-star stars"></i>';
         }
-        stars += simpleStar;
+      stars += simpleStar;
       }
-      return stars
+    return stars
+
     };
 
-    function messageNotFound() {
-      var source = $('#noresults-template').html();
-      var template = Handlebars.compile(source);
-      var html = template();
-      $('.cover-films').append(html);
-      $('.cover-serie').append(html);
-    };
+  function messageNotFound() {
+    var source = $('#noresults-template').html();
+    var template = Handlebars.compile(source);
+    var html = template();
+    $('.cover-films').append(html);
+    $('.cover-serie').append(html);
 
-    function printFlag(string) {
+  };
+
+  function printFlag(string) {
       var flags = [
     'en',
     'it',
@@ -178,11 +181,11 @@ $(document).ready(function () {
     'cs'
   ];
 
-  if(flags.includes(string)) {
-    string = '<img class="flag" src="img/' + string + '.png" alt="language">';
+    if(flags.includes(string)) {
+      string = '<img class="flag" src="img/' + string + '.png" alt="language">';
   }
 
-  return string;
+    return string;
   };
 
   function printImage(poster) {
